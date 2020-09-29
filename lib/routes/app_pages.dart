@@ -1,3 +1,4 @@
+import '../pages/login/login_view.dart';
 import 'package:get_x_with_nav/pages/test/test_view.dart';
 
 import '../pages/settings/settings_view.dart';
@@ -21,6 +22,10 @@ class AppPages {
     GetPage(
       name: Routes.TEST, 
       page:()=> TestView(), 
+    ),
+    GetPage(
+      name: Routes.LOGIN, 
+      page:()=> LoginView(), 
     ),
   ];
 }

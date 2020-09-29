@@ -1,0 +1,1 @@
+const t1_ic_ring = "images/t1_ic_ring.png";
