@@ -24,6 +24,7 @@ class HomeController extends GetxController {
   loginControl(loggedIn) {
     if  (!loggedIn) {
       print ("not logged in go to login page");
+      //Get.offAllNamed(Routes.LOGIN);
       Get.toNamed(Routes.LOGIN);
     }
   }

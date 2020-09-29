@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:get_x_with_nav/routes/app_pages.dart';
 import 'package:get_x_with_nav/utils/colors.dart';
 import 'package:get_x_with_nav/utils/constants.dart';
 import 'package:get_x_with_nav/utils/images.dart';
 import 'package:get_x_with_nav/utils/widgets.dart';
 
-
-class LoginView extends  StatelessWidget  {
-
+class LoginView extends StatelessWidget {
   bool rememberMe = false;
 
+  loginUser(String username, String password) {
+      print  ("login clicked....");
+      GetStorage().write("isLoggedIn",true);
+      //Get.offNamed(Routes.HOME);
+      Get.toNamed(Routes.LOGIN);
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +31,12 @@ class LoginView extends  StatelessWidget  {
                 SizedBox(height: 30),
                 Image.asset(t1_ic_ring, height: 100, width: 100),
                 SizedBox(height: 16),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[formHeading("Login/"), formSubHeadingForm("Signup")]),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      formHeading("Login/"),
+                      formSubHeadingForm("Signup")
+                    ]),
                 SizedBox(height: 50),
                 editTextStyle("Username", isPassword: false),
                 SizedBox(height: 16),
@@ -42,9 +55,12 @@ class LoginView extends  StatelessWidget  {
                   ),
                 ),
                 SizedBox(height: 8),
-                Padding(padding: EdgeInsets.fromLTRB(40, 16, 40, 16), child: shadowButton("Sign in")),
+                Padding(
+                    padding: EdgeInsets.fromLTRB(40, 16, 40, 16),
+                    child: shadowButton("Sign in")),
                 SizedBox(height: 24),
-                text("forgot pass", textColor: textColorPrimary, fontFamily: fontMedium)
+                text("forgot pass",
+                    textColor: textColorPrimary, fontFamily: fontMedium)
               ],
             ),
           ),
@@ -53,4 +69,3 @@ class LoginView extends  StatelessWidget  {
     );
   }
 }
-  
