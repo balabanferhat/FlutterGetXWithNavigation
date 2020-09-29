@@ -1,3 +1,6 @@
+import 'package:get_x_with_nav/pages/test/test_view.dart';
+
+import '../pages/settings/settings_view.dart';
 import '../pages/home/home_view.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +13,14 @@ class AppPages {
     GetPage(
       name: Routes.HOME, 
       page:()=> HomeView(), 
+    ),
+    GetPage(
+      name: Routes.SETTINGS, 
+      page:()=> SettingsView(), 
+    ),
+    GetPage(
+      name: Routes.TEST, 
+      page:()=> TestView(), 
     ),
   ];
 }

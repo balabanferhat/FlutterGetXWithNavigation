@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class TestController extends GetxController {
 
   @override
   void onInit() => null;
+  
 
 }
