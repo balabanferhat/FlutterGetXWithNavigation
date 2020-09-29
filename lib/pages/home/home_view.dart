@@ -1,62 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_x_with_nav/navi/bottom_navi.dart';
+import 'package:get_x_with_nav/navi/left_navi.dart';
+import 'package:get_x_with_nav/navi/navi_controller.dart';
+import 'package:get_x_with_nav/pages/home/home_widget.dart';
+import 'package:get_x_with_nav/pages/settings/settings_widget.dart';
+import 'package:get_x_with_nav/pages/test/test_widget.dart';
 import 'package:get_x_with_nav/routes/app_pages.dart';
 
 import 'home_controller.dart';
 
 class HomeView extends StatelessWidget {
   final HomeController homeController = Get.put(HomeController());
+  final NaviController naviController = Get.put(NaviController());
 
   @override
   Widget build(BuildContext context) {
+
+    List<Widget> _widgetList = <Widget>[
+        homeWidget(),
+        testWidget(),
+        settingsWidget()
+    ];
     return Scaffold(
       appBar: AppBar(title: Text('home')),
-      drawer: Drawer(
-          child: ListView(
-        children: [
-          DrawerHeader(
-            child: Text("Hoşgeldin"),
-            decoration: BoxDecoration(color: Colors.blueAccent),
-          ),
-          ListTile(
-            title: Text("Ana Sayfa"),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text("Hakkımızda"),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text("Çıkış"),
-            onTap: () {
-              print("logout clicked....");
-              //homeController.isLoggedIn.value=false;
-              GetStorage().write("isLoggedIn",false);
-              Get.toNamed(Routes.LOGIN);
-            },
-          )
-        ],
-      )),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.share), label: "Test"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), label: "Settings"),
-        ],
-        currentIndex: 0,
-        //onTap: ,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("HOME", style: TextStyle(fontSize: 30, fontFamily: 'Bold'))
-          ],
-        ),
-      ),
+      drawer:  leftNavi(),
+      bottomNavigationBar: bottomNavi(naviController),
+      body: Obx(()=> _widgetList.elementAt(naviController.selectedIndex.value)),
     );
   }
 }
