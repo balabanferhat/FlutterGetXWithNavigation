@@ -5,7 +5,7 @@ Getx,
 Get Cli,
 Folder Structure, 
 Bottom Navigation,
-Drawer
+Drawer,
 Dio: Service call ex.
 
 # Source Code
