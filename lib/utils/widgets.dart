@@ -8,10 +8,12 @@ import 'package:get_x_with_nav/routes/app_pages.dart';
 import 'colors.dart';
 import 'constants.dart';
 
-Padding editTextStyle(var hintText, {isPassword = true}) {
+Padding editTextStyle(var hintText, TextEditingController myController,
+    {isPassword = true}) {
   return Padding(
       padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
       child: TextFormField(
+        controller: myController,
         style:
             TextStyle(fontSize: textSizeLargeMedium, fontFamily: fontRegular),
         obscureText: isPassword,

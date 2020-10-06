@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_x_with_nav/generated/models/user_model.dart';
+import 'package:get_x_with_nav/pages/login/login_controller.dart';
 import 'package:get_x_with_nav/routes/app_pages.dart';
+import 'package:get_x_with_nav/services/login_api.dart';
 import 'package:get_x_with_nav/utils/colors.dart';
 import 'package:get_x_with_nav/utils/constants.dart';
 import 'package:get_x_with_nav/utils/images.dart';
@@ -9,13 +12,18 @@ import 'package:get_x_with_nav/utils/widgets.dart';
 
 class LoginView extends StatelessWidget {
   bool rememberMe = false;
+  final LoginController loginController = Get.put(LoginController());
 
-  loginUser() {
+  TextEditingController usernameController = TextEditingController(text: "");
+  TextEditingController passController = TextEditingController(text: "");
+
+  loginUser() async {
     //String username, String password
-    print("login clicked....");
-    GetStorage().write("isLoggedIn", true);
-    Get.offNamed(Routes.HOME);
+
     //Get.toNamed(Routes.LOGIN);
+    String username = usernameController.text;
+    String password = passController.text;
+    loginController.loginUser(username, password);
   }
 
   @override
@@ -39,9 +47,10 @@ class LoginView extends StatelessWidget {
                       formSubHeadingForm("Signup")
                     ]),
                 SizedBox(height: 50),
-                editTextStyle("Username", isPassword: false),
+                editTextStyle("Username", usernameController,
+                    isPassword: false),
                 SizedBox(height: 16),
-                editTextStyle("Password", isPassword: true),
+                editTextStyle("Password", passController, isPassword: true),
                 SizedBox(height: 8),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
