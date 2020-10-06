@@ -10,13 +10,14 @@ import 'package:get_x_with_nav/utils/widgets.dart';
 class LoginView extends StatelessWidget {
   bool rememberMe = false;
 
-  loginUser(String username, String password) {
-      print  ("login clicked....");
-      GetStorage().write("isLoggedIn",true);
-      //Get.offNamed(Routes.HOME);
-      Get.toNamed(Routes.LOGIN);
-
+  loginUser() {
+    //String username, String password
+    print("login clicked....");
+    GetStorage().write("isLoggedIn", true);
+    Get.offNamed(Routes.HOME);
+    //Get.toNamed(Routes.LOGIN);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +58,7 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 8),
                 Padding(
                     padding: EdgeInsets.fromLTRB(40, 16, 40, 16),
-                    child: shadowButton("Sign in")),
+                    child: shadowButton("Sign in", this.loginUser)),
                 SizedBox(height: 24),
                 text("forgot pass",
                     textColor: textColorPrimary, fontFamily: fontMedium)

@@ -37,8 +37,8 @@ Padding editTextStyle(var hintText, {isPassword = true}) {
 // Login/SignUp HeadingElement
 Text formHeading(var label) {
   return Text(label,
-      style: TextStyle(
-          color: textColorPrimary, fontSize: 30, fontFamily: 'Bold'),
+      style:
+          TextStyle(color: textColorPrimary, fontSize: 30, fontFamily: 'Bold'),
       textAlign: TextAlign.center);
 }
 
@@ -69,15 +69,15 @@ Widget text(var text,
   );
 }
 
-Material shadowButton(var name) {
+Material shadowButton(var name, VoidCallback callbackFunction) {
   return Material(
-      elevation: 2,
-      shadowColor: Colors.deepOrangeAccent[200],
-      borderRadius: new BorderRadius.circular(40.0),
-      child: SizedBox(
-        width: double.infinity,
-        height: 60,
-        child: MaterialButton(
+    elevation: 2,
+    shadowColor: Colors.deepOrangeAccent[200],
+    borderRadius: new BorderRadius.circular(40.0),
+    child: SizedBox(
+      width: double.infinity,
+      height: 60,
+      child: MaterialButton(
           child: text(name,
               fontSize: textSizeLargeMedium,
               textColor: white,
@@ -86,12 +86,7 @@ Material shadowButton(var name) {
           shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(40.0)),
           color: colorPrimary,
-          onPressed: () {
-            print  ("login clicked....");
-            GetStorage().write("isLoggedIn",true);
-            //Get.offNamed(Routes.HOME);
-            Get.toNamed(Routes.HOME);
-          }),
-        ),
-      );
+          onPressed: callbackFunction),
+    ),
+  );
 }
