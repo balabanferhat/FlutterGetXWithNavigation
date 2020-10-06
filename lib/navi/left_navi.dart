@@ -10,13 +10,14 @@ import 'package:get_x_with_nav/utils/widgets.dart';
 Widget getDrawerItem(String icon, String name, int pos) {
   return GestureDetector(
     onTap: () {
-      /*setState(() {
-          selectedItem = pos;
-        });*/
+      print("logout clicked....");
+      GetStorage().write("myUser", "");
+      Get.toNamed(Routes.LOGIN);
     },
     child: Container(
       //color: selectedItem == pos ? t2_colorPrimaryLight : t2_white,
       color: white,
+
       padding: EdgeInsets.fromLTRB(10, 6, 10, 6),
       child: Row(
         children: <Widget>[

@@ -23,7 +23,14 @@ class LoginView extends StatelessWidget {
     //Get.toNamed(Routes.LOGIN);
     String username = usernameController.text;
     String password = passController.text;
-    loginController.loginUser(username, password);
+
+    if (username.length < 3) {
+      Get.snackbar("Uyarı", "Lütfen kullanıcı adı giriniz!");
+    } else if (password.length < 3) {
+      Get.snackbar("Uyarı", "Lütfen şifrenizi  giriniz!");
+    } else {
+      loginController.loginUser(username, password);
+    }
   }
 
   @override
@@ -47,10 +54,18 @@ class LoginView extends StatelessWidget {
                       formSubHeadingForm("Signup")
                     ]),
                 SizedBox(height: 50),
-                editTextStyle("Username", usernameController,
-                    isPassword: false),
-                SizedBox(height: 16),
-                editTextStyle("Password", passController, isPassword: true),
+                new Form(
+                    //autovalidate: true,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    child: Column(
+                      children: [
+                        editTextStyle("Username", usernameController,
+                            isPassword: false),
+                        SizedBox(height: 16),
+                        editTextStyle("Password", passController,
+                            isPassword: true),
+                      ],
+                    )),
                 SizedBox(height: 8),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),

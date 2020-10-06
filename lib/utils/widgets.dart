@@ -17,6 +17,13 @@ Padding editTextStyle(var hintText, TextEditingController myController,
         style:
             TextStyle(fontSize: textSizeLargeMedium, fontFamily: fontRegular),
         obscureText: isPassword,
+        validator: (String val) {
+          if (val.length < 3) {
+            return ("Lütfen giriş yapınız!");
+          } else {
+            return null;
+          }
+        },
         decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(24, 18, 24, 18),
           hintText: hintText,
