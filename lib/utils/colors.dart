@@ -4,8 +4,9 @@ var textColorPrimary = materialColor(0XFF212121);
 const textColorSecondary = Color(0XFF747474);
 const edit_text_background = Color(0XFFE8E8E8);
 const white = Color(0XFFffffff);
-const colorPrimary = Color(0XFFff8080);
-
+//const colorPrimary = Color(0XFF5959fc);
+const colorPrimary = Colors.blueAccent;
+const view_color = Color(0XFFDADADA);
 
 Map<int, Color> color = {
   50: Color.fromRGBO(136, 14, 79, .1),
