@@ -5,29 +5,31 @@ import 'package:get_x_with_nav/navi/bottom_navi.dart';
 import 'package:get_x_with_nav/navi/left_navi.dart';
 import 'package:get_x_with_nav/navi/navi_controller.dart';
 import 'package:get_x_with_nav/pages/home/home_widget.dart';
-import 'package:get_x_with_nav/pages/settings/settings_widget.dart';
-import 'package:get_x_with_nav/pages/test/test_widget.dart';
-import 'package:get_x_with_nav/routes/app_pages.dart';
+import 'package:get_x_with_nav/pages/home/settings_widget.dart';
+import 'package:get_x_with_nav/pages/home/test_widget.dart';
+import 'package:get_x_with_nav/pages/login/login_controller.dart';
+import 'package:get_x_with_nav/utils/main_controlller.dart';
 
 import 'home_controller.dart';
 
 class HomeView extends StatelessWidget {
   final HomeController homeController = Get.put(HomeController());
   final NaviController naviController = Get.put(NaviController());
+  final LoginController loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
-
     List<Widget> _widgetList = <Widget>[
-        homeWidget(),
-        testWidget(),
-        settingsWidget()
+      homeWidget(),
+      testWidget(),
+      settingsWidget()
     ];
     return Scaffold(
       appBar: AppBar(title: Text('home')),
-      drawer:  leftNavi(),
+      drawer: leftNavi(loginController.myUser.value.name.toString()),
       bottomNavigationBar: bottomNavi(naviController),
-      body: Obx(()=> _widgetList.elementAt(naviController.selectedIndex.value)),
+      body:
+          Obx(() => _widgetList.elementAt(naviController.selectedIndex.value)),
     );
   }
 }
