@@ -14,4 +14,4 @@ const textSizeXLarge = 30.0;
 
 //const profileImage = 'assets/images/profile.png';
 
-const base_url = "https://e-veri.com/";
+const base_url = "https://ferhatbalaban.com/";
