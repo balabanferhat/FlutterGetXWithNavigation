@@ -1,7 +1,9 @@
 # FlutterGetXWithNavigation
+This example app shows how you can use Getx and bottom navigation together by managing selected index of bottom nav. with getx controllers. Also use of json service with dio is found in example. After login you can pass User object to every page inside the app with getx. Login flow is controlled in main.dart before going home or login page.
 
-Flutter Boilerplate with 
+These are used as an example in this boilerplate:
 Getx, 
+Get Storage,
 Get Cli,
 Folder Structure, 
 Bottom Navigation,
