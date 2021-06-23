@@ -10,6 +10,16 @@ english() {
     'password': 'Password',
     'remember_me': 'Remember me',
     'forgot_pass': 'Forgot password',
+
+    /* left navi */
+    'left_welcome': 'Welcome ',
+    'left_profile': 'Profile',
+    'left_noti': 'Notifications',
+    'left_reports': 'Reports',
+    'left_settings': 'Settings',
+    'left_signout': 'Sign out',
+    'left_share': 'Share',
+    'left_help': 'Help',
     /* end  */
   };
 }

@@ -10,7 +10,6 @@ import 'package:get_x_with_nav/utils/widgets.dart';
 Widget getDrawerItem(String icon, String name, int pos) {
   return GestureDetector(
     onTap: () {
-    
       print("logout clicked....");
       GetStorage().write("myUser", "");
       Get.toNamed(Routes.LOGIN);
@@ -33,34 +32,6 @@ Widget getDrawerItem(String icon, String name, int pos) {
       ),
     ),
   );
-}
-
-Widget leftNavi_old(String name) {
-  return Drawer(
-      child: ListView(
-    children: [
-      DrawerHeader(
-        child: Text("Hoşgeldin " + name),
-        decoration: BoxDecoration(color: Colors.blueAccent),
-      ),
-      ListTile(
-        title: Text("Ana Sayfa"),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text("Hakkımızda"),
-        onTap: () {},
-      ),
-      ListTile(
-        title: Text("Çıkış"),
-        onTap: () {
-          print("logout clicked....");
-          GetStorage().write("myUser", "");
-          Get.toNamed(Routes.LOGIN);
-        },
-      )
-    ],
-  ));
 }
 
 Widget leftNavi(String name) {
@@ -99,7 +70,7 @@ Widget leftNavi(String name) {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                text("Hoşgeldin  " + name,
+                                text("left_welcome".tr + name,
                                     textColor: white,
                                     fontFamily: fontBold,
                                     fontSize: textSizeNormal),
@@ -114,16 +85,16 @@ Widget leftNavi(String name) {
                     ),
                   )),
               SizedBox(height: 10),
-              getDrawerItem("t2_user", "Profile", 1),
-              getDrawerItem("t2_chat", "Message", 2),
-              getDrawerItem("t2_report", "Report", 3),
-              getDrawerItem("t2_settings", "Settings", 4),
-              getDrawerItem("t2_logout", "Sign out", 5),
+              getDrawerItem("t2_user", "left_profile".tr, 1),
+              getDrawerItem("t2_chat", "left_noti".tr, 2),
+              getDrawerItem("t2_report", "left_reports".tr, 3),
+              getDrawerItem("t2_settings", "left_settings".tr, 4),
+              getDrawerItem("t2_logout", "left_signout".tr, 5),
               SizedBox(height: 10),
               Divider(color: view_color, height: 1),
               SizedBox(height: 10),
-              getDrawerItem("t2_share", "Share", 6),
-              getDrawerItem("t2_help", "Help", 7),
+              getDrawerItem("t2_share", "left_share".tr, 6),
+              getDrawerItem("t2_help", "left_help".tr, 7),
               SizedBox(height: 10),
             ],
           ),
