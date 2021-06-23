@@ -20,7 +20,7 @@ Dio: Service call ex.
 <img align="left" width="100" src="/ss/ss_other.png" style="margin-right:10px">
 </p>
 <br><br>
-<p>
+
 ## Source Code
 https://github.com/balabanferhat/FlutterGetXWithNavigation
 </p>

@@ -8,7 +8,6 @@ import 'package:get_x_with_nav/pages/home/home_widget.dart';
 import 'package:get_x_with_nav/pages/home/settings_widget.dart';
 import 'package:get_x_with_nav/pages/home/test_widget.dart';
 import 'package:get_x_with_nav/pages/login/login_controller.dart';
-import 'package:get_x_with_nav/utils/main_controlller.dart';
 
 import 'home_controller.dart';
 
