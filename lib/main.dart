@@ -1,9 +1,12 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_x_with_nav/lang/lang.dart';
 import 'package:get_x_with_nav/pages/login/login_controller.dart';
+import 'package:get_x_with_nav/utils/log.dart';
 import 'package:get_x_with_nav/utils/main_controlller.dart';
 
 import 'generated/models/user_model.dart';
@@ -24,10 +27,16 @@ void main() async {
     loginController.myUser.value = loggedInUser;
   }
 
+  final Locale deviceLocale = Get.deviceLocale;
+  log("---- device languageCode:" + deviceLocale.languageCode);
+  log("---- device countryCode:" + deviceLocale.countryCode);
   runApp(
     GetMaterialApp(
       title: "Application",
       initialRoute: initialRoute,
+      translations: Lang(),
+      locale: deviceLocale,
+      fallbackLocale: Locale('en', 'US'),
       getPages: AppPages.routes,
     ),
   );

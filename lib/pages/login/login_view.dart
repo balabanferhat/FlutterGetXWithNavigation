@@ -25,9 +25,9 @@ class LoginView extends StatelessWidget {
     String password = passController.text;
 
     if (username.length < 3) {
-      Get.snackbar("Uyarı", "Lütfen kullanıcı adı giriniz!");
+      Get.snackbar("warning".tr, "enter_username".tr);
     } else if (password.length < 3) {
-      Get.snackbar("Uyarı", "Lütfen şifrenizi  giriniz!");
+      Get.snackbar("warning".tr, "enter_pass".tr);
     } else {
       loginController.loginUser(username, password);
     }
@@ -50,8 +50,8 @@ class LoginView extends StatelessWidget {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      formHeading("Login/"),
-                      formSubHeadingForm("Signup")
+                      formHeading("login".tr + "/"),
+                      formSubHeadingForm("signup".tr)
                     ]),
                 SizedBox(height: 50),
                 new Form(
@@ -59,10 +59,10 @@ class LoginView extends StatelessWidget {
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
                       children: [
-                        editTextStyle("Username", usernameController,
+                        editTextStyle("username".tr, usernameController,
                             isPassword: false),
                         SizedBox(height: 16),
-                        editTextStyle("Password", passController,
+                        editTextStyle("password".tr, passController,
                             isPassword: true),
                       ],
                     )),
@@ -70,7 +70,7 @@ class LoginView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
                   child: CheckboxListTile(
-                    title: text("Remember me", textColor: textColorPrimary),
+                    title: text("remember_me".tr, textColor: textColorPrimary),
                     value: rememberMe,
                     onChanged: (newValue) {
                       rememberMe = newValue;
@@ -82,9 +82,9 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 8),
                 Padding(
                     padding: EdgeInsets.fromLTRB(40, 16, 40, 16),
-                    child: shadowButton("Sign in", this.loginUser)),
+                    child: shadowButton("login".tr, this.loginUser)),
                 SizedBox(height: 24),
-                text("forgot pass",
+                text("forgot_pass".tr,
                     textColor: textColorPrimary, fontFamily: fontMedium)
               ],
             ),
