@@ -8,6 +8,18 @@ import 'package:get_x_with_nav/routes/app_pages.dart';
 import 'colors.dart';
 import 'constants.dart';
 
+Widget loading() {
+  return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        new CircularProgressIndicator(
+          valueColor: new AlwaysStoppedAnimation<Color>(Colors.blue),
+        ),
+      ]);
+
+}
+
 Padding editTextStyle(var hintText, TextEditingController myController,
     {isPassword = true}) {
   return Padding(

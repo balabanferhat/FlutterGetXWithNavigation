@@ -10,6 +10,7 @@ import 'package:get_x_with_nav/utils/widgets.dart';
 Widget getDrawerItem(String icon, String name, int pos) {
   return GestureDetector(
     onTap: () {
+    
       print("logout clicked....");
       GetStorage().write("myUser", "");
       Get.toNamed(Routes.LOGIN);
