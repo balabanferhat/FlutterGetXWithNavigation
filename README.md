@@ -13,11 +13,11 @@ Dio: Service call ex.
 
 
 # Screenshots
-<img  width="100" src="/ss/ss_login.png" style="margin-right:10px">
-<img  width="100" src="/ss/ss_home.png" style="margin-right:10px">
-<img  width="100" src="/ss/ss_left_navi.png" style="margin-right:10px">
-<img  width="100" src="/ss/ss_other.png" style="margin-right:10px">
-<br>
+<img align="left" width="100" src="/ss/ss_login.png" style="margin-right:10px">
+<img align="left" width="100" src="/ss/ss_home.png" style="margin-right:10px">
+<img align="left" width="100" src="/ss/ss_left_navi.png" style="margin-right:10px">
+<img align="left" width="100" src="/ss/ss_other.png" style="margin-right:10px">
+---
 
 # Source Code
 https://github.com/balabanferhat/FlutterGetXWithNavigation
