@@ -4,11 +4,20 @@ This example app shows how you can use Getx and bottom navigation together by ma
 These are used as an example in this boilerplate:
 Getx, 
 Get Storage,
+Get Translations,
 Get Cli,
 Folder Structure, 
 Bottom Navigation,
 Drawer,
 Dio: Service call ex.
+
+
+# Screenshots
+<img align="left" width="100" src="/ss_login.png" style="margin-right:10px">
+<img align="left" width="100" src="/ss_home.png" style="margin-right:10px">
+<img align="left" width="100" src="/ss_left_navi.png" style="margin-right:10px">
+<img align="left" width="100" src="/ss_other.png" style="margin-right:10px">
+
 
 # Source Code
 https://github.com/balabanferhat/FlutterGetXWithNavigation
