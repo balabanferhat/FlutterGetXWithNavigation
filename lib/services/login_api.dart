@@ -15,7 +15,7 @@ class LoginAPI {
       final user = User.fromJson(response.data);
       return user;
     } catch (e) {
-      print(e);
+      log(e);
       return null;
     }
   }
