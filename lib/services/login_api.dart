@@ -4,7 +4,7 @@ import 'package:get_x_with_nav/utils/constants.dart';
 import 'package:get_x_with_nav/utils/log.dart';
 
 class LoginAPI {
-  Future<User> login(String username, String password) async {
+  Future<User?> login(String username, String password) async {
     final url =
         base_url + "test.json?username=" + username + "&pass=" + password;
     log(url);

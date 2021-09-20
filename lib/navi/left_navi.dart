@@ -16,7 +16,7 @@ Widget getDrawerItem(String icon, String name, int pos) {
     },
     child: Container(
       //color: selectedItem == pos ? t2_colorPrimaryLight : t2_white,
-      color: white,
+      //color: white,
 
       padding: EdgeInsets.fromLTRB(10, 6, 10, 6),
       child: Row(
@@ -43,7 +43,7 @@ Widget leftNavi(String name) {
       child: SingleChildScrollView(
         child: Container(
           width: Get.width,
-          color: white,
+          //color: white,
           child: Column(
             children: <Widget>[
               Padding(

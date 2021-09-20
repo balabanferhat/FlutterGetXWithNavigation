@@ -11,7 +11,7 @@ import 'package:get_x_with_nav/utils/images.dart';
 import 'package:get_x_with_nav/utils/widgets.dart';
 
 class LoginView extends StatelessWidget {
-  bool rememberMe = false;
+  bool? rememberMe = false;
   final LoginController loginController = Get.put(LoginController());
 
   TextEditingController usernameController = TextEditingController(text: "");

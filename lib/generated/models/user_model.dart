@@ -1,9 +1,9 @@
 class User {
-  String name;
-  String surname;
-  String token;
+  late String name;
+  late String surname;
+  late String token;
 
-  User({this.name, this.surname, this.token});
+  User({required this.name, required this.surname, required this.token});
 
   User.fromJson(Map<String, dynamic> json) {
     name = json['name'];

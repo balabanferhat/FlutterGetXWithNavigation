@@ -9,16 +9,16 @@ import 'package:get_x_with_nav/utils/log.dart';
 import 'package:get_x_with_nav/utils/widgets.dart';
 
 class LoginController extends GetxController {
-  var myUser = User().obs;
+  var myUser = User(name: "", surname: "", token: "").obs;
   var myUser_val = "".obs;
 
   @override
   void onInit() {
     log("On init MainController");
 
-    String myUser_str = GetStorage().read<String>('myUser');
+    String? myUser_str = GetStorage().read<String>('myUser');
 
-    if (!myUser_str.isNull) myUser_val.value = myUser_str;
+    if (myUser_str != null) myUser_val.value = myUser_str;
 
     super.onInit();
   }
@@ -29,13 +29,13 @@ class LoginController extends GetxController {
     Get.dialog(loading());
     Future.delayed(const Duration(seconds: 30), () => "5");
 
-    User thisUser = await LoginAPI().login(username, password);
-    myUser.value = thisUser;
+    User? thisUser = await LoginAPI().login(username, password);
+    myUser.value = thisUser!;
 
     String myUser_str = jsonEncode(myUser.value.toJson());
 
     GetStorage().write("myUser", myUser_str);
-    if (Get.isDialogOpen) Get.back();
+    if (Get.isDialogOpen!) Get.back();
     Get.offNamed(Routes.HOME);
     //Get.toNamed(Routes.LOGIN);
   }
