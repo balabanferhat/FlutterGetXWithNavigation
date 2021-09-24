@@ -15,17 +15,9 @@ import 'routes/app_pages.dart';
 
 void main() async {
   await GetStorage.init();
+  String initialRoute = AppPages.SPLASH;
 
-  LoginController loginController = Get.put(LoginController());
-
-  String initialRoute = AppPages.INITIAL;
-  if (loginController.myUser_val.value == "") {
-    initialRoute = AppPages.LOGIN;
-  } else {
-    User loggedInUser =
-        User.fromJson(jsonDecode(loginController.myUser_val.value));
-    loginController.myUser.value = loggedInUser;
-  }
+  LoginController loginController = Get.put(LoginController(), permanent: true);
 
   final Locale? deviceLocale = Get.deviceLocale;
   log("---- device languageCode:" + deviceLocale!.languageCode);

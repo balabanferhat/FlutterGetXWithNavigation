@@ -12,7 +12,8 @@ import 'package:get_x_with_nav/utils/widgets.dart';
 
 class LoginView extends StatelessWidget {
   bool? rememberMe = false;
-  final LoginController loginController = Get.put(LoginController());
+  final LoginController loginController =
+      Get.put(LoginController(), permanent: true);
 
   TextEditingController usernameController = TextEditingController(text: "");
   TextEditingController passController = TextEditingController(text: "");

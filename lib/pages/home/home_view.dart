@@ -14,7 +14,8 @@ import 'home_controller.dart';
 class HomeView extends StatelessWidget {
   final HomeController homeController = Get.put(HomeController());
   final NaviController naviController = Get.put(NaviController());
-  final LoginController loginController = Get.put(LoginController());
+  final LoginController loginController =
+      Get.put(LoginController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {

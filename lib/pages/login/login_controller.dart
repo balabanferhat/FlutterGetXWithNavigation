@@ -14,13 +14,17 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    log("On init MainController");
+    log("********* On init LoginController");
 
     String? myUser_str = GetStorage().read<String>('myUser');
 
     if (myUser_str != null) myUser_val.value = myUser_str;
 
     super.onInit();
+  }
+
+  void onClose() {
+    log("********* onClose LoginController");
   }
 
   loginUser(String username, String password) async {
