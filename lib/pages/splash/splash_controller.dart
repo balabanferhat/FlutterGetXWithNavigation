@@ -24,10 +24,13 @@ class SplashController extends GetxController {
       loginController.myUser.value = loggedInUser;
     }
     Future.delayed(const Duration(seconds: 3), () {
-      //Get.offAllNamed(initialRoute);
+      Get.offAllNamed(initialRoute);
 
+      //test snackbar
+      /*
       mySnackbarWithRetry(
           "Veri erişiminde bir problem oluştu. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz!");
+          */
     });
 
     //Get.off(HomeView());
