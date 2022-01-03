@@ -26,7 +26,21 @@ class HomeView extends StatelessWidget {
     ];
     return Scaffold(
       backgroundColor: Get.theme.backgroundColor,
-      appBar: AppBar(title: Text('home')),
+      appBar: AppBar(
+        title: Text('home'),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+              naviController.selectedIndex.value = 2;
+            },
+          )
+        ],
+      ),
       drawer: leftNavi(loginController.myUser.value.name.toString()),
       bottomNavigationBar: bottomNavi(naviController),
       body:

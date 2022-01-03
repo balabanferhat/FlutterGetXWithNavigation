@@ -4,7 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:get_x_with_nav/pages/home/languages_screen.dart';
 import 'package:get_x_with_nav/pages/home/settings_controller.dart';
 import 'package:get_x_with_nav/utils/themes.dart';
-import 'package:settings_ui/settings_ui.dart';
+import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 
 Widget settingsWidget() {
   final SettingsController settingsController = Get.put(SettingsController());
