@@ -25,7 +25,7 @@ class LoginView extends StatelessWidget {
     String username = usernameController.text;
     String password = passController.text;
 
-    if (username.length < 3) {
+    if (username.length < 3 || !GetUtils.isUsername(username)) {
       Get.snackbar("warning".tr, "enter_username".tr);
     } else if (password.length < 3) {
       Get.snackbar("warning".tr, "enter_pass".tr);

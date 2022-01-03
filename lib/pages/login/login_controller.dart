@@ -37,7 +37,7 @@ class LoginController extends GetxController {
 
     GetStorage().write("myUser", myUser_str);
     if (Get.isDialogOpen!) Get.back();
-    Get.offAll(HomeView());
+    Get.offAll(() => HomeView());
     //Get.toNamed(Routes.LOGIN);
   }
 
