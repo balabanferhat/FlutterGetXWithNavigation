@@ -5,6 +5,7 @@ import 'package:get_x_with_nav/navi/bottom_navi.dart';
 import 'package:get_x_with_nav/navi/left_navi.dart';
 import 'package:get_x_with_nav/navi/navi_controller.dart';
 import 'package:get_x_with_nav/pages/home/home_widget.dart';
+import 'package:get_x_with_nav/pages/home/rehber_view.dart';
 import 'package:get_x_with_nav/pages/home/settings_widget.dart';
 import 'package:get_x_with_nav/pages/home/test_widget.dart';
 import 'package:get_x_with_nav/pages/login/login_controller.dart';
@@ -29,6 +30,16 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: Text('home'),
         actions: [
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+              Get.to((RehberView()));
+            },
+          ),
           IconButton(
             icon: Icon(
               Icons.settings,

@@ -30,8 +30,11 @@ class LoginController extends GetxController {
 
   loginFunc(username, password) async {
     log("----- 3s waiting....");
-    User? thisUser = await LoginAPI().login(username, password);
-    myUser.value = thisUser!;
+    User? thisUser = User(
+        name: 'ssaltun',
+        surname: 'surname',
+        token: 'ssaltuntoken'); //await LoginAPI().login(username, password);
+    myUser.value = thisUser;
 
     String myUser_str = jsonEncode(myUser.value.toJson());
 
