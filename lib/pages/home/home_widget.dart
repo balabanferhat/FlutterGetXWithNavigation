@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x_with_nav/pages/home/detail_view.dart';
 
 Widget homeWidget() {
   final List<String> imgList = [
@@ -161,7 +162,10 @@ Widget homeWidget() {
                   ),
                 ],
               ),
-              Image.network(imgList[0]),
+              GestureDetector(
+                child: Image.network(imgList[0]),
+                onTap: () => {Get.to(() => DetailView())},
+              ),
               //Image.network(imgList[1]),
             ],
           ),
