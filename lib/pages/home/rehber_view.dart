@@ -5,6 +5,9 @@ import 'package:get_x_with_nav/generated/models/personel.dart';
 import 'package:get_x_with_nav/pages/home/rehber_controller.dart';
 import 'package:get_x_with_nav/utils/colors.dart';
 import 'package:get_x_with_nav/utils/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
 
 class Contact {
   String adi;
@@ -24,11 +27,11 @@ class RehberView extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(
-              Icons.add,
+              Icons.refresh,
               color: Colors.white,
             ),
             onPressed: () {
-              // do something
+              RehberController().getPersonelListeUpdate();
             },
           ),
           IconButton(
@@ -60,22 +63,31 @@ class RehberView extends StatelessWidget {
     );
   }
 
+  String generateMd5(String input) {
+    return md5.convert(utf8.encode(input)).toString();
+  }
+
   Widget PersonelKart(Personel personel, index) {
     return Card(
       shadowColor: Colors.black38,
       child: ListTile(
         leading: CircleAvatar(
-            child: Image.asset(
-          'images/profile.jpg',
-          scale: 20,
-          fit: BoxFit.cover,
-        )),
+          backgroundImage: NetworkImage(personel.cinsiyet != 'Erkek'
+              ? "https://www.clipartmax.com/png/middle/71-717812_girl-person-woman-people-icon-profile-woman-icon.png"
+              : "https://www.clipartmax.com/png/middle/36-361753_junge-junge-mann-mensch-menschen-avatar-symbol-profile-woman-icon.png"),
+        ),
         title: Text(personel.adi + ' ' + personel.soyadi),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(personel.dahili != 'null' ? '-' : personel.dahili),
-            Text(personel.gsm),
+            Text(personel.dahili != 'null' ? personel.dahili : '-'),
+            InkWell(
+              child: Text(personel.gsm),
+              onTap: () async {
+                if (!await launch(personel.gsm))
+                  throw 'Could not launch $personel.gsm';
+              },
+            ),
             Text(personel.birimi),
           ],
         ),

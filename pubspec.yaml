@@ -25,6 +25,7 @@ dependencies:
   get: ^4.6.1
   get_storage: ^2.0.3
   flutter_settings_ui: ^2.0.1
+  url_launcher: ^6.0.17
 
   flutter:
     sdk: flutter
