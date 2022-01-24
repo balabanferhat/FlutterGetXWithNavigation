@@ -10,6 +10,7 @@ english() {
     'password': 'Password',
     'remember_me': 'Remember me',
     'forgot_pass': 'Forgot password',
+    'check_username_and_pass': 'Please check your username and password!',
 
     /* left navi */
     'left_welcome': 'Welcome ',

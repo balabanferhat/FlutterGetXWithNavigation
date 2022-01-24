@@ -8,7 +8,7 @@ class SettingsController extends GetxController {
   var lockInBackground = true.obs;
   var notificationsEnabled = true.obs;
   var darkEnabled = false.obs;
-  var versionName = "".obs;
+  var versionName = "";
   @override
   Future<void> onInit() async {
     if (themeDark) {
@@ -24,6 +24,6 @@ class SettingsController extends GetxController {
     String version = packageInfo.version;
     //String buildNumber = packageInfo.buildNumber;
     log("---- app version name:" + version);
-    versionName.value = version;
+    versionName = version;
   }
 }

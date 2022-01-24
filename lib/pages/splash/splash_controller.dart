@@ -36,4 +36,11 @@ class SplashController extends GetxController {
     //Get.off(HomeView());
     super.onInit();
   }
+
+  @override
+  void onClose() {
+    log("onClose SplashController");
+    // TODO: implement onClose
+    super.onClose();
+  }
 }

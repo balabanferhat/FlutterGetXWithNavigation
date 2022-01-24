@@ -145,7 +145,7 @@ Widget homeWidget() {
                           ],
                         ),
                         barrierDismissible: false,
-                        radius: 50.0,
+                        radius: 10.0,
                         confirm: ElevatedButton(
                             onPressed: () {
                               Get.back();

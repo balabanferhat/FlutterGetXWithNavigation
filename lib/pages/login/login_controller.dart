@@ -31,14 +31,18 @@ class LoginController extends GetxController {
   loginFunc(username, password) async {
     log("----- 3s waiting....");
     User? thisUser = await LoginAPI().login(username, password);
-    myUser.value = thisUser!;
+    if (thisUser == null) {
+      Get.snackbar("warning".tr, "check_username_and_pass".tr);
+    } else {
+      myUser.value = thisUser;
 
-    String myUser_str = jsonEncode(myUser.value.toJson());
+      String myUser_str = jsonEncode(myUser.value.toJson());
 
-    GetStorage().write("myUser", myUser_str);
-    if (Get.isDialogOpen!) Get.back();
-    Get.offAll(() => HomeView());
-    //Get.toNamed(Routes.LOGIN);
+      GetStorage().write("myUser", myUser_str);
+      if (Get.isDialogOpen!) Get.back();
+      Get.offAll(() => HomeView());
+      //Get.toNamed(Routes.LOGIN);
+    }
   }
 
   loginUser(String username, String password) async {

@@ -33,6 +33,7 @@ void main() async {
   }
   runApp(
     GetMaterialApp(
+      enableLog: true,
       title: "Application",
       initialRoute: initialRoute,
       translations: Lang(),

@@ -10,6 +10,8 @@ turkish() {
     'password': 'Şifre',
     'remember_me': 'Beni hatırla',
     'forgot_pass': 'Şifremi unuttum',
+    'check_username_and_pass':
+        'Lütfen kullanıcı adı ve şifrenizi kontrol ediniz!',
 
     /* left navi */
     'left_welcome': 'Hoşgeldin ',
