@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -10,7 +9,6 @@ import 'package:get_x_with_nav/utils/globals.dart';
 import 'package:get_x_with_nav/utils/log.dart';
 import 'package:get_x_with_nav/utils/themes.dart';
 
-import 'generated/models/user_model.dart';
 import 'routes/app_pages.dart';
 
 void main() async {
@@ -31,8 +29,10 @@ void main() async {
   } else {
     Get.changeTheme(Themes.light);
   }
+  HttpOverrides.global = MyHttpOverrides();
   runApp(
     GetMaterialApp(
+      enableLog: true,
       title: "Application",
       initialRoute: initialRoute,
       translations: Lang(),
@@ -43,4 +43,13 @@ void main() async {
       darkTheme: Themes.dark,
     ),
   );
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
 }

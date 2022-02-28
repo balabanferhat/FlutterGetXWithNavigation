@@ -1,9 +1,6 @@
 //-------------------------------------------Form-------------------------------------------------------------------------
 // EditText rounded Style
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:get_x_with_nav/routes/app_pages.dart';
 
 import 'colors.dart';
 import 'constants.dart';

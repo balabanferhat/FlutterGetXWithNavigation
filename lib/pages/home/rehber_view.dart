@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get_x_with_nav/generated/models/personel.dart';
 import 'package:get_x_with_nav/pages/home/rehber_controller.dart';
-import 'package:get_x_with_nav/utils/colors.dart';
-import 'package:get_x_with_nav/utils/widgets.dart';
+import 'package:get_x_with_nav/utils/images.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
@@ -30,18 +28,24 @@ class RehberView extends StatelessWidget {
               Icons.refresh,
               color: Colors.white,
             ),
-            onPressed: () {
-              RehberController().getPersonelListeUpdate();
+            onPressed: () async {
+              await _rehberController.getPersonelListeUpdate();
             },
           ),
           IconButton(
             icon: Icon(
-              Icons.settings,
+              Icons.search,
               color: Colors.white,
             ),
-            onPressed: () {
-              // do something
-              //naviController.selectedIndex.value = 2;
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.sort_by_alpha,
+              color: Colors.white,
+            ),
+            onPressed: () async {
+              await _rehberController.getPersonelListeLowerCase();
             },
           )
         ],
@@ -56,7 +60,7 @@ class RehberView extends StatelessWidget {
               itemCount: _rehberController.personelList.value.length,
               itemBuilder: (BuildContext context, int index) {
                 Personel personel = _rehberController.personelList.value[index];
-                return PersonelKart(personel, index);
+                return personelKart(personel, index);
               }),
         );
       }),
@@ -67,15 +71,18 @@ class RehberView extends StatelessWidget {
     return md5.convert(utf8.encode(input)).toString();
   }
 
-  Widget PersonelKart(Personel personel, index) {
+  Widget personelKart(Personel personel, index) {
     return Card(
       shadowColor: Colors.black38,
+      elevation: 8,
       child: ListTile(
         leading: CircleAvatar(
-          backgroundImage: NetworkImage(personel.cinsiyet != 'Erkek'
-              ? "https://www.clipartmax.com/png/middle/71-717812_girl-person-woman-people-icon-profile-woman-icon.png"
-              : "https://www.clipartmax.com/png/middle/36-361753_junge-junge-mann-mensch-menschen-avatar-symbol-profile-woman-icon.png"),
-        ),
+            backgroundImage: Image.asset(
+                    personel.cinsiyet != 'Erkek' ? woman_profile : man_profile,
+                    height: 100,
+                    width: 100)
+                .image,
+            radius: 40),
         title: Text(personel.adi + ' ' + personel.soyadi),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

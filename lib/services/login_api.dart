@@ -35,8 +35,7 @@ class LoginAPI {
   }
 
   Future<List<Personel>> personelListesi() async {
-    final url =
-        "http://10.101.1.17:1616/buski/services/wsPersonel/personelBilgileri?kullaniciAdi=Buyuksehir&sifre=Buski2021";
+    final url = "";
     log(url);
     Iterable<Personel> personelList = [];
     try {

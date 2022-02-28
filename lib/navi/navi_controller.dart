@@ -1,20 +1,19 @@
 import 'package:get/get.dart';
 import 'package:get_x_with_nav/routes/app_pages.dart';
 
-class NaviController extends GetxController  {
+class NaviController extends GetxController {
   var selectedIndex = 0.obs;
 
   @override
-  void onInit()  {
-
+  void onInit() {
     print("On init NaviController");
-    
+
     super.onInit();
   }
 
   void onBottomNavItemTapped(int index) {
-    print ("tab item clicked:"+index.toString());
-    selectedIndex.value=index;
+    print("tab item clicked:" + index.toString());
+    selectedIndex.value = index;
     /*
     switch (index) {
       case 0:

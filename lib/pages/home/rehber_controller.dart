@@ -43,6 +43,17 @@ class RehberController extends GetxController {
     list = await LoginAPI().personelListesi();
     GetStorage().write('todos', list.toList());
     personelList.value = list;
+    personelList.sort((a, b) {
+      return a.adi.toLowerCase().compareTo(b.soyadi.toLowerCase());
+    });
+    isLoading.value = false;
+  }
+
+  getPersonelListeLowerCase() async {
+    isLoading.value = true;
+    personelList.sort((a, b) {
+      return a.adi.toLowerCase().compareTo(b.adi.toLowerCase());
+    });
     isLoading.value = false;
   }
 }

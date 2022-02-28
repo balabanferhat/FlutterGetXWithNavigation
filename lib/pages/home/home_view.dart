@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:get_x_with_nav/navi/bottom_navi.dart';
 import 'package:get_x_with_nav/navi/left_navi.dart';
 import 'package:get_x_with_nav/navi/navi_controller.dart';
@@ -37,7 +36,7 @@ class HomeView extends StatelessWidget {
             ),
             onPressed: () {
               // do something
-              Get.to((RehberView()));
+              Get.to(() => RehberView());
             },
           ),
           IconButton(

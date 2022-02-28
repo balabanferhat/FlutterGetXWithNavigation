@@ -130,7 +130,7 @@ Widget settingsWidget() {
                   ),
                 ),
                 Text(
-                  'Version: 2.4.0 (287)',
+                  'Version: ' + settingsController.versionName.value,
                   style: TextStyle(color: Color(0xFF777777)),
                 ),
               ],
