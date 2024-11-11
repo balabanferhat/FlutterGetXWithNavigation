@@ -1,15 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:get_x_with_nav/navi/bottom_navi.dart';
-import 'package:get_x_with_nav/navi/left_navi.dart';
-import 'package:get_x_with_nav/navi/navi_controller.dart';
-import 'package:get_x_with_nav/pages/home/home_widget.dart';
-import 'package:get_x_with_nav/pages/home/settings_widget.dart';
-import 'package:get_x_with_nav/pages/home/test_widget.dart';
-import 'package:get_x_with_nav/pages/login/login_controller.dart';
-
-import 'home_controller.dart';
 
 class DetailView extends StatelessWidget {
   final List<String> imgList = [

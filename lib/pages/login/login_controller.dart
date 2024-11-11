@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get_x_with_nav/generated/models/user_model.dart';
 import 'package:get_x_with_nav/pages/home/home_view.dart';
-import 'package:get_x_with_nav/routes/app_pages.dart';
 import 'package:get_x_with_nav/services/login_api.dart';
 import 'package:get_x_with_nav/utils/log.dart';
 import 'package:get_x_with_nav/utils/widgets.dart';

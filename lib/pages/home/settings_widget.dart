@@ -12,11 +12,11 @@ Widget settingsWidget() {
   return Obx(() => SettingsList(
         sections: [
           SettingsSection(
-            title: 'Common',
+            title: Text('Common'),
             tiles: [
               SettingsTile(
-                title: 'Language',
-                subtitle: 'English',
+                title: Text('Language'),
+                description: Text('English'),
                 leading: Icon(Icons.language),
                 onPressed: (context) {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -45,48 +45,48 @@ Widget settingsWidget() {
               ),
             ),*/
               SettingsTile(
-                title: 'Environment',
-                subtitle: 'Production',
+                title: Text('Environment'),
+                description: Text('Production'),
                 leading: Icon(Icons.cloud_queue),
               ),
             ],
           ),
           SettingsSection(
-            title: 'Account',
+            title: Text('Account'),
             tiles: [
-              SettingsTile(title: 'Phone number', leading: Icon(Icons.phone)),
-              SettingsTile(title: 'Email', leading: Icon(Icons.email)),
-              SettingsTile(title: 'Sign out', leading: Icon(Icons.exit_to_app)),
+              SettingsTile(title: Text('Phone number'), leading: Icon(Icons.phone)),
+              SettingsTile(title: Text('Email'), leading: Icon(Icons.email)),
+              SettingsTile(title: Text('Sign out'), leading: Icon(Icons.exit_to_app)),
             ],
           ),
           SettingsSection(
-            title: 'Security',
+            title: Text('Security'),
             tiles: [
               SettingsTile.switchTile(
-                title: 'Lock app in background',
+                title: Text('Lock app in background'),
                 leading: Icon(Icons.phonelink_lock),
-                switchValue: settingsController.lockInBackground.value,
+                initialValue: settingsController.lockInBackground.value,
                 onToggle: (bool value) {
                   settingsController.lockInBackground.value = value;
                   settingsController.notificationsEnabled.value = value;
                 },
               ),
               SettingsTile.switchTile(
-                title: 'Use fingerprint',
-                subtitle: 'Allow application to access stored fingerprint IDs.',
+                title: Text('Use fingerprint'),
+                description: Text('Allow application to access stored fingerprint IDs.'),
                 leading: Icon(Icons.fingerprint),
                 onToggle: (bool value) {},
-                switchValue: false,
+                initialValue: false,
               ),
               SettingsTile.switchTile(
-                title: 'Change password',
+                title: Text('Change password'),
                 leading: Icon(Icons.lock),
-                switchValue: true,
+                initialValue: true,
                 onToggle: (bool value) {},
               ),
               SettingsTile.switchTile(
-                title: 'Enable Notifications',
-                switchValue: settingsController.notificationsEnabled.value,
+                title: Text('Enable Notifications'),
+                initialValue: settingsController.notificationsEnabled.value,
                 leading: Icon(Icons.notifications_active),
                 enabled: true,
                 onToggle: (value) {
@@ -96,13 +96,13 @@ Widget settingsWidget() {
             ],
           ),
           SettingsSection(
-            title: 'Misc',
+            title: Text('Misc'),
             tiles: [
               SettingsTile(
-                  title: 'Terms of Service', leading: Icon(Icons.description)),
+                  title: Text('Terms of Service'), leading: Icon(Icons.description)),
               SettingsTile.switchTile(
-                title: 'Enable Dark Mode',
-                switchValue: settingsController.darkEnabled.value,
+                title: Text('Enable Dark Mode'),
+                initialValue: settingsController.darkEnabled.value,
                 leading: Icon(Icons.dark_mode_outlined),
                 enabled: true,
                 onToggle: (value) {
@@ -117,25 +117,21 @@ Widget settingsWidget() {
               ),
             ],
           ),
-          CustomSection(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 22, bottom: 8),
-                  child: Image.asset(
-                    'images/settings.png',
-                    height: 50,
-                    width: 50,
-                    color: Color(0xFF777777),
-                  ),
-                ),
-                Text(
+          SettingsSection(
+            // Bu kısım özel bir widget veya bölüm olabilir.
+            title: Text('Version Info'), // Özel bölüm başlığı
+            tiles: [
+              SettingsTile(
+                title:   Text(
                   'Version: ' + settingsController.versionName,
                   style: TextStyle(color: Color(0xFF777777)),
                 ),
-              ],
-            ),
+                description: Text('Version details here'),
+                leading: Icon(Icons.info_outline),
+              ),
+            ],
           ),
+          
         ],
       ));
 }

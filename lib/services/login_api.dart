@@ -3,7 +3,6 @@ import 'package:get_x_with_nav/generated/models/user_model.dart';
 import 'package:get_x_with_nav/utils/constants.dart';
 import 'package:get_x_with_nav/utils/log.dart';
 import 'package:get_x_with_nav/utils/rest_connector.dart';
-import 'dart:convert' as convert;
 
 class LoginAPI {
   Future<User?> login(String username, String password) async {

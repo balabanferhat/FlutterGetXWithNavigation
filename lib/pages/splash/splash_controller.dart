@@ -5,7 +5,6 @@ import 'package:get_x_with_nav/generated/models/user_model.dart';
 import 'package:get_x_with_nav/pages/login/login_controller.dart';
 import 'package:get_x_with_nav/routes/app_pages.dart';
 import 'package:get_x_with_nav/utils/log.dart';
-import 'package:get_x_with_nav/utils/mysnackbar.dart';
 
 class SplashController extends GetxController {
   @override

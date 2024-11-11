@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:get_x_with_nav/utils/globals.dart';
 import 'package:get_x_with_nav/utils/log.dart';
 import 'package:package_info_plus/package_info_plus.dart';

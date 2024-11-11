@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:get_x_with_nav/generated/models/user_model.dart';
 import 'package:get_x_with_nav/pages/login/login_controller.dart';
-import 'package:get_x_with_nav/routes/app_pages.dart';
-import 'package:get_x_with_nav/services/login_api.dart';
+
 import 'package:get_x_with_nav/utils/colors.dart';
 import 'package:get_x_with_nav/utils/constants.dart';
 import 'package:get_x_with_nav/utils/images.dart';

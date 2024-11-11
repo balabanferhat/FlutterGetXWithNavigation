@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -9,8 +6,6 @@ import 'package:get_x_with_nav/pages/login/login_controller.dart';
 import 'package:get_x_with_nav/utils/globals.dart';
 import 'package:get_x_with_nav/utils/log.dart';
 import 'package:get_x_with_nav/utils/themes.dart';
-
-import 'generated/models/user_model.dart';
 import 'routes/app_pages.dart';
 
 void main() async {
